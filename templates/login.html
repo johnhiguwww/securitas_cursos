@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'assets/capacete.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"> <!-- Renomeie o arquivo CSS conforme necessário -->
+    <title>Login securitas CURSOS</title>
+</head>
+<body>
+    <div class="container">       
+        <h2>Login securitas Cursos</h2>
+        <img src="{% static 'assets/capacete.png' %}" alt="capacete">
+        <form action="" method="POST">
+    <!--    Para Cadastrar usuarios comuns utilize:
+                'USERNAME': "securitas_cursos_adm"
+                'PASSWORD': "SZ.bhU75Y?]gBv;"
+            Nos determinados campos. -->
+            {% csrf_token %}
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username_or_email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="pass" required>
+                <input type="checkbox" id="checkbox">
+
+                <script>
+                    const password = document.getElementById("password");
+                    const checkbox = document.getElementById("checkbox");
+
+                    checkbox.onchange = function(e){
+                        password.type = checkbox.checked ? "text" : "password";
+                    };
+                </script>
+            </div>
+            <button class="btn" type="submit">Login</button>
+        </form>
+        <!--<p>Se não houver uma conta, entre em contato com o T.I</p>-->
+        
+        {% for message in messages %}
+        <div class="alert {% if message.tags == 'error' %}alert-danger{% elif message.tags == 'warning' %}alert-warning{% elif message.tags == 'success' %}alert-success{% else %}alert-info{% endif %} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+    </div> 
+</body>
+</html>

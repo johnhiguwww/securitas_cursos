@@ -1,0 +1,54 @@
+   /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+video {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+.container img {
+    width: 100px; /* Defina o tamanho desejado em pixels */
+    height: auto; /* Mantém a proporção da imagem */
+}
+#link-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#liberated-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#liberated-link:hover {
+    text-decoration: underline;
+}
+
+/* Adicionando cores */
+body {
+    background-color: #fff;
+}
+
+#link-container {
+    background-color: #03a9f4;
+    padding: 10px;
+    border-radius: 5px;
+}
+#liberated-link {
+    color: #fff;
+}
+.certificate {
+    display: block;
+    margin: 0 auto;
+}
+

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" href="{% static 'assets/capacete.png' %}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>Home Page</title>
+    <body>
+        <h1>Assista o vídeo para liberar o link</h1>
+        <video controls>
+            <source src="{% static 'curses-video/RESUMO NR 20 - SEGURANÇA E SAÚDE NO TRABALHO COM INFLAMÁVEIS E COMBUSTÍVEIS (2021).mp4' %}" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        
+        <div id="link-container" class="link-container" style="display: none;">
+            <p>Link Liberado: <a id="liberated-link" href="{% url 'generate_certificate_nr20' %}" target="_blank">Clique aqui</a></p> 
+            <img class="certificate" src="{% static 'assets\certificacao.png' %}" alt="png">
+        </div>
+    
+        <script>
+            // Aguarda o carregamento da página
+            document.addEventListener("DOMContentLoaded", function() {
+                const videoElement = document.querySelector("video");
+                const linkContainer = document.getElementById("link-container");
+    
+                // Adiciona um ouvinte para o evento de término do vídeo
+                videoElement.addEventListener("ended", function() {
+                    // Exibe o link após o término do vídeo
+                    linkContainer.style.display = "block";
+                });
+            });
+        </script>
+    </body>
+</html>

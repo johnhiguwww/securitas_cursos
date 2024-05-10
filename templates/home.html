@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Sua Página</title>
+    <link rel="icon" href="{% static 'assets/capacete.png' %}" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"> 
+</head>
+
+<body>
+    <div class="head">
+        <h2>Olá {{ user.first_name }}</h2>
+    </div>
+    <section id="home">
+        <div class="content">
+            <h2>Todo conteúdo na palma da sua mão!</h2>
+            <p>Tenha acesso aos cursos e aulas onde quer que esteja! Com mais facilidade e praticidade para melhorar a
+                sua experiência nos estudos!</p>
+            <a href="#services" class="btn">Conhecer os cursos</a>
+        </div>
+        <img src="{% static 'assets/Jovens.png' %}" class="duda">
+    </section>
+    <div class="title">
+        <h3>Viaje nos cursos-securitas</h3>
+        <p>Tenha acesso aos cursos e aulas onde quer que esteja! <br> Com mais facilidade e praticidade para melhorar
+            seus conhecimentos.</p>
+    </div>
+    <section id="services">
+        <div class="secText">
+            <h2>Descubra nossas áreas de conhecimento</h2>
+        </div>
+        <div class="slider-container">
+            <div class="slide-content">
+                <div class="card-wrapper">
+                    <!-- DIV Motorista-->
+                    <div class="card">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="{% static 'assets/motorista.png' %}" alt="" class="card-img">    
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">Motorista</h2>
+                            <button class="button"><a href="{% url 'cursos-motorista' %}">Saiba mais</a></button>
+                        </div>
+                    </div>
+                    <!-- DIV SSMA-->
+                    <div class="card">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="{% static 'assets/ssma.png' %}" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">SSMA</h2>
+                            <button class="button">Saiba Mais</button>
+                        </div>
+                    </div>
+                    <!-- DIV RH-->
+                    <div class="card">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="{% static 'assets/rh.png' %}" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">Recursos Humanos</h2>
+                            <button class="button">Saiba mais</button>
+                        </div>
+                    </div>
+                    <!-- DIV MANUTENÇÃO-->
+                    <div class="card">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="{% static 'assets/manutencao.png' %}" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">Manutenção</h2>
+                            <button class="button">Saiba mais</button>
+                        </div>
+                    </div>
+                    <!-- DIV Operação-->
+                    <div class="card">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="{% static 'assets/operacao.png' %}" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">Operação</h2>
+                            <button class="button">Saiba mais</button>
+                        </div>
+                    </div>
+                    <!-- DIV Financeiro-->
+                    <div class="card">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="{% static 'assets/administrativo-financeiro.png' %}" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">Financeiro</h2>
+                            <button class="button">Saiba mais</button>
+                        </div>
+                    </div>
+                    <!-- DIV Monitoramento-->
+                    <div class="card">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="{% static 'assets/monitoramento.png' %}" alt="" class="card-img">                
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">Monitoramento</h2>
+                            <button class="button">Saiba mais</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Botões de navegação e paginação Swiper -->
+                <!-- Você pode adicionar os botões de navegação e a paginação aqui, se necessário -->
+            </div>
+        </div>
+    </section>
+    <div class="center-button">
+        <a href="{% url 'logout' %}" class="btn btn-primary">Desconectar</a>
+    </div>
+    <!-- Fecha a div com classe "center-button" -->
+</body>
+
+</html>
